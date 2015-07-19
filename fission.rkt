@@ -29,10 +29,19 @@
    ;(concat c ae C))
    (concat c arrconst C))
   
-  ((fission-point F) hole (map f F) (let (x F) ae) (let (x ae) F) (zipWith f F ae)
-                     (zipWith f ae F) (fold f e F) (backpermute σ f F) (permute f F f ae)
-                     (permute f ae f F) (reshape σ F) (slice σ F) (replicate σ F)
-                     (concat i F ae) (concat i ae F) (tuple F ae) (tuple ae F) (split i F)))
+  ((fission-point F) hole
+                     (map f F)
+                     (let (x F) ae)  (let (x ae) F)
+                     (zipWith f F ae)  (zipWith f ae F) 
+                     (fold f e F)
+                     (backpermute σ f F) 
+                     (permute f F f ae)  (permute f ae f F)
+                     (reshape σ F)
+                     (slice σ F)
+                     (replicate σ F)
+                     (concat i F ae)  (concat i ae F)
+                     (tuple F ae)  (tuple ae F)
+                     (split i F)))
 
 (define-metafunction accelerate+fission
   [(realDim shape i)
